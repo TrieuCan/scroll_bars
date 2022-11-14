@@ -150,7 +150,10 @@ class _ScrollBottomNavigationBarState extends State<ScrollBottomNavigationBar> {
   Widget _tab(BuildContext context, int index, Widget? child) {
     bottomNavigationBar = BottomNavigationBar(
       items: widget.items,
-      onTap: widget.controller.bottomNavigationBar.setTab,
+      onTap: (index) {
+        widget.controller.bottomNavigationBar.setTab(index);
+        widget.onTap!(index);
+      },
       currentIndex: index,
       elevation: 0.0,
       type: widget.type,
