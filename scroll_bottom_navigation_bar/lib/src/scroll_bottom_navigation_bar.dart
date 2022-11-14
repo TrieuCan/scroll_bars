@@ -15,7 +15,7 @@ class ScrollBottomNavigationBar extends StatefulWidget {
     this.backgroundColor,
     this.backgroundGradient,
     this.iconSize = 24.0,
-    Color? selectedItemColor,
+    Color? selectItemColor,
     this.unselectedItemColor,
     this.selectedIconTheme,
     this.unselectedIconTheme,
@@ -37,12 +37,12 @@ class ScrollBottomNavigationBar extends StatefulWidget {
         assert(elevation == null || elevation >= 0.0),
         assert(iconSize >= 0.0),
         assert(
-          selectedItemColor == null || fixedColor == null,
+          selectItemColor == null || fixedColor == null,
           'Either selectedItemColor or fixedColor can be specified, but not both',
         ),
         assert(selectedFontSize >= 0.0),
         assert(unselectedFontSize >= 0.0),
-        selectedItemColor = selectedItemColor ?? fixedColor,
+        selectedItemColor = selectItemColor ?? fixedColor,
         super(key: key);
 
   final ScrollController controller;
