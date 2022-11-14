@@ -36,10 +36,10 @@ class ScrollBottomNavigationBar extends StatefulWidget {
         assert(0 <= currentIndex && currentIndex < items.length),
         assert(elevation == null || elevation >= 0.0),
         assert(iconSize >= 0.0),
-        assert(
-          selectItemColor == null || fixedColor == null,
-          'Either selectedItemColor or fixedColor can be specified, but not both',
-        ),
+        // assert(
+        //   selectItemColor == null || fixedColor == null,
+        //   'Either selectedItemColor or fixedColor can be specified, but not both',
+        // ),
         assert(selectedFontSize >= 0.0),
         assert(unselectedFontSize >= 0.0),
         selectedItemColor = selectItemColor ?? fixedColor,
