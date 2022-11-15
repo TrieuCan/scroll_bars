@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 import 'scroll_bottom_navigation_bar_controller.dart';
@@ -212,13 +214,17 @@ class _ScrollBottomNavigationBarState extends State<ScrollBottomNavigationBar> {
   }
 
   Widget _decoratedContainer(double heightFactor) {
-    return Container(
-      height: widget.controller.bottomNavigationBar.height,
-      decoration: BoxDecoration(
-        color: backgroundColor,
-        gradient: widget.backgroundGradient,
+    return BackdropFilter(
+                  filter: ImageFilter.blur(sigmaX: 0.5, sigmaY: 0.5),
+      child: Container(
+        height: widget.controller.bottomNavigationBar.height,
+        width: double.infinity,
+        decoration: BoxDecoration(
+          color: backgroundColor,
+          gradient: widget.backgroundGradient,
+        ),
+        child: _opacity(heightFactor),
       ),
-      child: _opacity(heightFactor),
     );
   }
 
