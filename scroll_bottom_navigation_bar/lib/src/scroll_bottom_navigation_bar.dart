@@ -215,7 +215,7 @@ class _ScrollBottomNavigationBarState extends State<ScrollBottomNavigationBar> {
 
   Widget _decoratedContainer(double heightFactor) {
     return Container(
-      height: widget.controller.bottomNavigationBar.height,
+      height: widget.controller.bottomNavigationBar.height + 30,
       width: double.infinity,
       decoration: BoxDecoration(
         color: backgroundColor,
