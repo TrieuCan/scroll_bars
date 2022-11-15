@@ -214,17 +214,14 @@ class _ScrollBottomNavigationBarState extends State<ScrollBottomNavigationBar> {
   }
 
   Widget _decoratedContainer(double heightFactor) {
-    return BackdropFilter(
-                  filter: ImageFilter.blur(sigmaX: 0.5, sigmaY: 0.5),
-      child: Container(
-        height: widget.controller.bottomNavigationBar.height,
-        width: double.infinity,
-        decoration: BoxDecoration(
-          color: backgroundColor,
-          gradient: widget.backgroundGradient,
-        ),
-        child: _opacity(heightFactor),
+    return Container(
+      height: widget.controller.bottomNavigationBar.height,
+      width: double.infinity,
+      decoration: BoxDecoration(
+        color: backgroundColor,
+        gradient: widget.backgroundGradient,
       ),
+      child: _opacity(heightFactor),
     );
   }
 
