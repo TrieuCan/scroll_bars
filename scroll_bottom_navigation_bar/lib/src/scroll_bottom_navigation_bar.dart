@@ -16,6 +16,7 @@ class ScrollBottomNavigationBar extends StatefulWidget {
     this.backgroundColor,
     this.backgroundGradient,
     this.iconSize = 24.0,
+    this.fixedColor,
     this.selectedItemColor,
     this.unselectedItemColor,
     this.selectedIconTheme,
@@ -53,7 +54,7 @@ class ScrollBottomNavigationBar extends StatefulWidget {
 
   final BottomNavigationBarType? type;
 
-  Color? get fixedColor => selectedItemColor;
+  final Color? fixedColor;
 
   final Color? backgroundColor;
 
