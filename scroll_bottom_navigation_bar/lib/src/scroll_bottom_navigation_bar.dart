@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 import 'scroll_bottom_navigation_bar_controller.dart';
@@ -13,11 +11,11 @@ class ScrollBottomNavigationBar extends StatefulWidget {
     this.currentIndex = 0,
     this.elevation,
     this.type,
+    Color? fixedColor,
     this.backgroundColor,
     this.backgroundGradient,
     this.iconSize = 24.0,
-    this.fixedColor,
-    this.selectedItemColor,
+    Color? selectedItemColor,
     this.unselectedItemColor,
     this.selectedIconTheme,
     this.unselectedIconTheme,
@@ -40,6 +38,7 @@ class ScrollBottomNavigationBar extends StatefulWidget {
         assert(iconSize >= 0.0),
         assert(selectedFontSize >= 0.0),
         assert(unselectedFontSize >= 0.0),
+        selectedItemColor = selectedItemColor ?? fixedColor,
         super(key: key);
 
   final ScrollController controller;
@@ -54,7 +53,7 @@ class ScrollBottomNavigationBar extends StatefulWidget {
 
   final BottomNavigationBarType? type;
 
-  final Color? fixedColor;
+  Color? get fixedColor => selectedItemColor;
 
   final Color? backgroundColor;
 
